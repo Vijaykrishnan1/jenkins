@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Static Website</title>
+  <style>
+    /* ===== CSS Styling ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+
+    header {
+      background: #333;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    header nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      margin-top: 0.5rem;
+    }
+
+    header nav ul li {
+      margin: 0 1rem;
+    }
+
+    header nav ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    header nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 2rem;
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      margin-bottom: 1rem;
+      color: #444;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      max-width: 300px;
+    }
+
+    form input, form button {
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    form button {
+      background: #333;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    form button:hover {
+      background: #555;
+    }
+
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- ===== Header ===== -->
+  <header>
+    <h1>Welcome to My Static Website</h1>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== Main Content ===== -->
+  <main>
+    <section id="home">
+      <h2>Home</h2>
+      <p>This is a simple static website built with HTML, CSS, and JavaScript.</p>
+      <button id="clickBtn">Click Me!</button>
+      <p id="message"></p>
+    </section>
+
+    <section id="about">
+      <h2>About</h2>
+      <p>Static websites are fast, lightweight, and easy to host anywhere.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <form id="contactForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+        
+        <button type="submit">Submit</button>
+      </form>
+      <p id="formMessage"></p>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <p>&copy; 2026 My Static Website</p>
+  </footer>
+
+  <!-- ===== JavaScript ===== -->
+  <script>
+    // Button click interaction
+    document.getElementById("clickBtn").addEventListener("click", () => {
+      document.getElementById("message").textContent = "You clicked the button!";
+    });
+
+    // Form submission interaction
+    document.getElementById("contactForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const name = document.getElementById("name").value;
+      document.getElementById("formMessage").textContent = `Thanks for reaching out, ${name}!`;
+    });
+  </script>
+</body>
+</html>
