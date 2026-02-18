@@ -139,60 +139,29 @@ pipeline {
 }
 
 
-Git Version Control Commands - Explanations 
-A) Setup & Configuration 
-git --version 
- git config --global user.name "Your Name" 
- git config --global user.email you@example.com 
- B) Create or Clone Repositories 
-git init 
- git clone <repository-url> 
- C) Check Status 
-git status 
- D) Add Files (Staging Area) 
-git add file.txt 
- git add . 
- E) Commit Changes 
-git commit -m "Message" 
- git commit --amend 
- 
-F) View History 
-git log 
- git log --oneline 
- git log --oneline --graph --all 
- G) Branching 
-git branch 
- git branch <name> 
- git checkout <name> 
- Switches branch. 
-git checkout -b <name> 
- H) Merging 
-git merge <branch> 
- I) Remote Repository Commands 
-git remote add origin <url> 
- git remote -v 
- git push origin main 
- git push -u origin main 
-git pull origin main 
- git fetch 
- J) Undo / Reset / Restore 
-git restore file.txt 
- git restore --staged file.txt 
- git reset --soft HEAD~1 
- git reset --mixed HEAD~1 
- git reset --hard HEAD~1 
- es. 
-git revert <commit-id> 
- K) Stash (Temporary Save) 
-git stash 
- git stash list 
- git stash apply 
- git stash pop 
-L) Tagging 
-git tag v1.0 
- git push origin v1.0 
+git init
+git status
+git add app.py
+git commit -m "Initial commit: Added greeting application"
+git remote add origin https://github.com/username/simple-git-app.git
+git branch -M main
+git push -u origin main
 
 
+git checkout -b feature/add-greeting
+
+git add app.py
+git commit -m "Added additional greeting message"
+
+git checkout main
+git merge feature/add-greeting
+git push origin main
 
 
- 
+git config --global user.name "Your Name"
+git config --global user.email "you@email.com"
+
+
+git branch
+git branch new-branch
+git branch -d feature/add-greeting
